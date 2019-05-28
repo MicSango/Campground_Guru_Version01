@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Campground Guru</title>
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+	</head>
+	<body>
+		<div class="container text-center" id="landing-alert">
+			<% if(error && error.length > 0){ %>
+				<div class="alert alert-danger" role="alert">
+					<%= error %>
+				</div>
+			<% } %>
+			<% if(success && success.length > 0){ %>
+				<div class="alert alert-success" role="alert">
+					<%= success %>
+				</div>
+			<% } %>
+		</div>
+		
+		<% if(error && error.length > 0){ %>
+			<div id="landing-header-alert">
+				<h1>Welcome to Campground Guru</h1>
+				<a href="/campgrounds" class="btn btn-success btn-lg">View All Campgrounds</a>
+				<p>
+					<form action="/campgrounds" method="GET" class="form-inline">
+						<div class="form-group">
+							<input type="text" name="search" placeholder="Campground search..." class="form-control">
+							<input type="submit" value="Search" class="btn btn-default">
+						</div>
+					</form>
+				</p>
+			</div>
+		<% } else { %>
+			<div id="landing-header">
+				<h1>Welcome to Campground Guru</h1>
+				<a href="/campgrounds" class="btn btn-success btn-lg">View All Campgrounds</a>
+				<p>
+					<form action="/campgrounds" method="GET" class="form-inline">
+						<div class="form-group">
+							<input type="text" name="search" placeholder="Campground search..." class="form-control">
+							<input type="submit" value="Search" class="btn btn-default">
+						</div>
+					</form>
+				</p>
+			</div>
+		<% } %>
+
+		<ul class="slideshow">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+
+<% include ./partials/footer %>
+
+
+
+

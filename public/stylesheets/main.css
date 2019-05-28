@@ -1,0 +1,46 @@
+a:hover {
+	text-decoration: none;
+}
+
+.navbar-default {
+	margin-bottom: 5px;
+}
+
+.checked {
+	color: orange;
+}
+
+.delete-form {
+	display: inline;
+}
+
+.form-title {
+	text-align: center;
+}
+
+.my-form {
+	width: 30%;
+	margin: 25px auto;
+}
+
+.wrap-thumbnail {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.thumbnail img {
+	width: 100%;
+}
+
+.thumbnail {
+	padding: 0;
+}
+
+.thumbnail .caption-full {
+	padding: 9px;
+}
+
+
+
+
+

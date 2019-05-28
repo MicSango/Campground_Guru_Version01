@@ -1,0 +1,44 @@
+<% include ../partials/header %>
+
+<div class="container">
+	<header class="jumbotron">
+		<div class="container">
+			<h1>Welcome to Campgrounds Guru</h1>
+			<p>View our hand-picked campgrounds from all over the world!</p>
+			<p>
+				<a class="btn btn-primary btn-lg" href="/campgrounds/new">Add a New Campground</a>
+			</p>
+		</div>
+	</header>
+
+	<div class="row text-center wrap-thumbnail">
+		<% campgrounds.forEach(function(campground){ %>
+			<div class="col-md-3 col-sm-6">
+				<div class="thumbnail">
+					<img src="<%= campground.image %>" alt="campground image">
+					<div class="caption">
+						<h3><%= campground.name %></h3>
+						<% if(campground.rating === 0){ %>
+							<em>No reviews yet.</em>
+						<% } else { %>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star <% if(campground.rating > 1.5) { %> checked <% } %>"></span>
+							<span class="fa fa-star <% if(campground.rating > 2.5) { %> checked <% } %>"></span>
+							<span class="fa fa-star <% if(campground.rating > 3.5) { %> checked <% } %>"></span>
+							<span class="fa fa-star <% if(campground.rating > 4.5) { %> checked <% } %>"></span>
+						<% } %>	
+					</div>
+					<p>
+						<a class="btn btn-primary" href="/campgrounds/<%= campground._id %>">More Info</a>
+					</p>
+				</div>
+			</div>
+		<% }); %>
+	</div>
+</div>
+
+<% include ../partials/footer %>
+
+
+
+
